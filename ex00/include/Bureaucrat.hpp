@@ -42,4 +42,6 @@ class Bureaucrat {
   };
 };
 
+// === Overloads ===
+
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
