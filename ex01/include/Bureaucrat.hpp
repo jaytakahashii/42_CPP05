@@ -2,6 +2,8 @@
 
 #include <string>
 
+class Form;
+
 class Bureaucrat {
  private:
   const std::string _name;
@@ -28,6 +30,8 @@ class Bureaucrat {
 
   void incrementGrade();
   void decrementGrade();
+
+  void signForm(Form &form) const;
 
   // === Exceptions ===
 
