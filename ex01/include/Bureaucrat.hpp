@@ -2,6 +2,8 @@
 
 #include <string>
 
+class Form;
+
 class Bureaucrat {
  private:
   const std::string _name;
@@ -29,6 +31,8 @@ class Bureaucrat {
   void incrementGrade();
   void decrementGrade();
 
+  void signForm(Form &form) const;
+
   // === Exceptions ===
 
   class GradeTooHighException : public std::exception {
@@ -41,5 +45,7 @@ class Bureaucrat {
     const char *what() const throw();
   };
 };
+
+// === Overloads ===
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
