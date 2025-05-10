@@ -12,6 +12,7 @@ HEADERS			= Bureaucrat.hpp \
 							ShrubberyCreationForm.hpp \
 							PresidentialPardonForm.hpp \
 							RobotomyRequestForm.hpp \
+							Intern.hpp \
 							color.hpp \
 HEADER			= $(addprefix $(INCLUDE_DIR), $(HEADERS))
 
@@ -31,6 +32,7 @@ SRC_FILES		=	main.cpp \
 							ShrubberyCreationForm.cpp \
 							PresidentialPardonForm.cpp \
 							RobotomyRequestForm.cpp \
+							Intern.cpp \
 
 SRCS				= $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS				= $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))

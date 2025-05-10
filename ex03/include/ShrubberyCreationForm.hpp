@@ -20,7 +20,7 @@ class ShrubberyCreationForm : public AForm {
 
   // === execute ===
 
-  virtual void execute(Bureaucrat const& executor) const;
+  void execute(Bureaucrat const& executor) const;
 
   // === Exceptions ===
 
@@ -30,4 +30,8 @@ class ShrubberyCreationForm : public AForm {
       return "Error: Could not open file for writing";
     }
   };
+
+  // === destructor ===
+
+  ~ShrubberyCreationForm();
 };

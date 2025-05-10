@@ -29,3 +29,8 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
     std::cout << "Robotomy failed for " << _target << "." << std::endl;
   }
 }
+
+// === Destructor ===
+RobotomyRequestForm::~RobotomyRequestForm() {
+  std::cout << "RobotomyRequestForm: Destructor called" << std::endl;
+}

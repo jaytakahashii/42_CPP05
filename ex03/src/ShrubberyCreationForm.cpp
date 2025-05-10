@@ -35,3 +35,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
   file.close();
   std::cout << "Shrubbery created in " << _target << "_shrubbery" << std::endl;
 }
+
+// === Destructor ===
+
+ShrubberyCreationForm::~ShrubberyCreationForm() {
+  std::cout << "ShrubberyCreationForm: Destructor called" << std::endl;
+}
