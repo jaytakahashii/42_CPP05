@@ -16,7 +16,7 @@ class AForm {
   // === OCF ===
 
   AForm();
-  virtual ~AForm() = 0;
+  virtual ~AForm();
   AForm(const AForm &src);
   AForm &operator=(const AForm &src);
 
