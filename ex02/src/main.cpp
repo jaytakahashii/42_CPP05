@@ -4,48 +4,44 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "color.hpp"
 
 int main() {
   try {
+    std::cout << BLUE "\n--- Bureaucrat ---\n" RESET << std::endl;
+
     Bureaucrat bob("Bob", 1);
-    Bureaucrat jim("Jim", 140);
-    Bureaucrat alice("Alice", 50);
+    std::cout << bob << std::endl;
+
+    std::cout << BLUE "\n--- Forms ---\n" RESET << std::endl;
 
     ShrubberyCreationForm shrubForm("garden");
     RobotomyRequestForm roboForm("Bender");
     PresidentialPardonForm pardonForm("Ford Prefect");
 
-    std::cout << "\n--- Signing Forms ---\n" << std::endl;
+    std::cout << shrubForm << std::endl;
+    std::cout << roboForm << std::endl;
+    std::cout << pardonForm << std::endl;
+
+    std::cout << BLUE "\n--- Signing Forms ---\n" RESET << std::endl;
 
     bob.signForm(shrubForm);
     bob.signForm(roboForm);
     bob.signForm(pardonForm);
 
-    std::cout << "\n--- Executing Forms with Insufficient Grade ---\n"
-              << std::endl;
+    std::cout << shrubForm << std::endl;
+    std::cout << roboForm << std::endl;
+    std::cout << pardonForm << std::endl;
 
-    shrubForm.execute(jim);
-    roboForm.execute(jim);
-    pardonForm.execute(jim);
-
-    std::cout << "\n--- Executing Forms with Sufficient Grade ---\n"
-              << std::endl;
+    std::cout << BLUE "\n--- Executing Forms ---\n" RESET << std::endl;
 
     shrubForm.execute(bob);
     roboForm.execute(bob);
     pardonForm.execute(bob);
 
-    std::cout << "\n--- Executing Forms with Intermediate Grade ---\n"
-              << std::endl;
-
-    shrubForm.execute(alice);
-    roboForm.execute(alice);
-    pardonForm.execute(alice);
-
-    std::cout << "\n--- Attempting to Sign Forms with Insufficient Grade ---\n"
-              << std::endl;
+    std::cout << YELLOW "\n--- fin ---\n" RESET << std::endl;
   } catch (const std::exception &e) {
-    std::cerr << "Exception: " << e.what() << std::endl;
+    std::cerr << e.what() << std::endl;
   }
 
   return 0;
