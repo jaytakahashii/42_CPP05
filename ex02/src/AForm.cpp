@@ -9,11 +9,11 @@
 
 AForm::AForm()
     : _name("Default"), _isSigned(false), _signGrade(150), _executeGrade(150) {
-  std::cout << "Form: Default constructor called" << std::endl;
+  std::cout << "AForm: Default constructor called" << std::endl;
 }
 
 AForm::~AForm() {
-  std::cout << "Form: Destructor called" << std::endl;
+  std::cout << "AForm: Destructor called" << std::endl;
 }
 
 AForm::AForm(const AForm &src)
@@ -21,11 +21,11 @@ AForm::AForm(const AForm &src)
       _isSigned(src._isSigned),
       _signGrade(src._signGrade),
       _executeGrade(src._executeGrade) {
-  std::cout << "Form: Copy constructor called" << std::endl;
+  std::cout << "AForm: Copy constructor called" << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &src) {
-  std::cout << "Form: Copy assignment operator called" << std::endl;
+  std::cout << "AForm: Copy assignment operator called" << std::endl;
   if (this != &src) {
     _isSigned = src._isSigned;
   }
@@ -44,7 +44,7 @@ AForm::AForm(const std::string &name, int signGrade, int executeGrade)
   } else if (signGrade > 150 || executeGrade > 150) {
     throw GradeTooLowException();
   }
-  std::cout << "Form: Parameterized constructor called" << std::endl;
+  std::cout << "AForm: Parameterized constructor called" << std::endl;
 }
 
 // === Getters ===
@@ -81,11 +81,15 @@ void AForm::beSigned(const Bureaucrat &bureaucrat) {
 // === Exceptions ===
 
 const char *AForm::GradeTooHighException::what() const throw() {
-  return RED "Form: Grade is too high!" RESET;
+  return RED "AForm: Grade is too high!" RESET;
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {
-  return RED "Form: Grade is too low!" RESET;
+  return RED "AForm: Grade is too low!" RESET;
+}
+
+const char *AForm::NotSignedException::what() const throw() {
+  return RED "AForm: Not signed!" RESET;
 }
 
 // === Overloads ===
