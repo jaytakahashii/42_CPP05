@@ -1,32 +1,14 @@
 {
     "configurations": [
         {
-            "name": "Mac",
-            "includePath": [
-                "${workspaceFolder}/ex0*/include/**"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/bin/c++",
-            "cStandard": "c17",
-            "cppStandard": "c++98",
-            "intelliSenseMode": "macos-clang-arm64",
-            "compilerArgs": [
-                "-Wall",
-                "-Wextra",
-                "-Werror",
-                "-pedantic"
-            ]
-        },
-        {
             "name": "linux",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang",
+            "compilerPath": "/usr/bin/c++",
             "cStandard": "c17",
-            "cppStandard": "c++14",
-            "intelliSenseMode": "macos-clang-arm64"
+            "cppStandard": "c++98"
         }
     ],
     "version": 4
