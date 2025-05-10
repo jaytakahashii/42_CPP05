@@ -19,5 +19,9 @@ class PresidentialPardonForm : public AForm {
 
   // === Execute ===
 
-  virtual void execute(Bureaucrat const& executor) const;
+  void execute(Bureaucrat const& executor) const;
+
+  // === destructor ===
+
+  virtual ~PresidentialPardonForm();
 };

@@ -20,5 +20,9 @@ class RobotomyRequestForm : public AForm {
 
   // === execute ===
 
-  virtual void execute(Bureaucrat const& executor) const;
+  void execute(Bureaucrat const& executor) const;
+
+  // === destructor ===
+
+  ~RobotomyRequestForm();
 };
