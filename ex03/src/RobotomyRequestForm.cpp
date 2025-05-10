@@ -31,7 +31,6 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
 }
 
 // === Destructor ===
-
 RobotomyRequestForm::~RobotomyRequestForm() {
   std::cout << "RobotomyRequestForm: Destructor called" << std::endl;
 }

@@ -2,8 +2,13 @@
 
 #include <exception>
 #include <iostream>
+#include <string>
 
 class Bureaucrat;
+
+#define SHRUB_FORM "shrubbery creation"
+#define ROBO_FORM "robotomy request"
+#define PRES_FORM "presidential pardon"
 
 class AForm {
  private:
@@ -16,7 +21,7 @@ class AForm {
   // === OCF ===
 
   AForm();
-  virtual ~AForm() = 0;
+  virtual ~AForm();
   AForm(const AForm &src);
   AForm &operator=(const AForm &src);
 

@@ -24,7 +24,6 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
 }
 
 // === Destructor ===
-
 PresidentialPardonForm::~PresidentialPardonForm() {
   std::cout << "PresidentialPardonForm: Destructor called" << std::endl;
 }

@@ -23,5 +23,5 @@ class PresidentialPardonForm : public AForm {
 
   // === destructor ===
 
-  virtual ~PresidentialPardonForm();
+  ~PresidentialPardonForm();
 };
