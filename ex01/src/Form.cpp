@@ -81,11 +81,11 @@ void Form::beSigned(const Bureaucrat &bureaucrat) {
 // === Exceptions ===
 
 const char *Form::GradeTooHighException::what() const throw() {
-  return RED "Form: Grade is too high!" RESET;
+  return RED "Grade is too high!" RESET;
 }
 
 const char *Form::GradeTooLowException::what() const throw() {
-  return RED "Form: Grade is too low!" RESET;
+  return RED "Grade is too low!" RESET;
 }
 
 // === Overloads ===

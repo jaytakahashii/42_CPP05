@@ -78,18 +78,27 @@ void AForm::beSigned(const Bureaucrat &bureaucrat) {
   _isSigned = true;
 }
 
+void AForm::execute(Bureaucrat const &executor) const {
+  if (!isSigned()) {
+    throw NotSignedException();
+  }
+  if (executor.getGrade() > _executeGrade) {
+    throw GradeTooLowException();
+  }
+}
+
 // === Exceptions ===
 
 const char *AForm::GradeTooHighException::what() const throw() {
-  return RED "AForm: Grade is too high!" RESET;
+  return RED "Grade is too high!" RESET;
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {
-  return RED "AForm: Grade is too low!" RESET;
+  return RED "Grade is too low!" RESET;
 }
 
 const char *AForm::NotSignedException::what() const throw() {
-  return RED "AForm: Not signed!" RESET;
+  return RED "Not signed!" RESET;
 }
 
 // === Overloads ===

@@ -1,6 +1,6 @@
 MAKEFILE 		= Makefile
 
-NAME				= 28Bnot28C
+NAME				= Intern
 
 SRC_DIR			= src/
 OBJ_DIR			= .obj/

@@ -13,8 +13,7 @@ int main() {
     std::cerr << e.what() << std::endl;
   }
 
-  std::cout << std::endl;
-  std::cout << YELLOW << "=== decrement ===" << RESET << std::endl;
+  std::cout << YELLOW << "\n=== decrement ===" << RESET << std::endl;
   try {
     Bureaucrat bureaucrat("Jane Doe", 150);
     std::cout << bureaucrat << std::endl;

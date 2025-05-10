@@ -8,22 +8,20 @@
 
 int main() {
   try {
-    std::cout << BLUE "\n--- Bureaucrat ---\n" RESET << std::endl;
-
+    std::cout << BLUE "\n--- Bureaucrat ---" RESET << std::endl;
     Bureaucrat bob("Bob", 1);
     std::cout << bob << std::endl;
 
-    std::cout << BLUE "\n--- Forms ---\n" RESET << std::endl;
-
-    ShrubberyCreationForm shrubForm("garden");
-    RobotomyRequestForm roboForm("Bender");
-    PresidentialPardonForm pardonForm("Ford Prefect");
+    std::cout << BLUE "\n--- Forms ---" RESET << std::endl;
+    ShrubberyCreationForm shrubForm("tree");
+    RobotomyRequestForm roboForm("robot");
+    PresidentialPardonForm pardonForm("pardon");
 
     std::cout << shrubForm << std::endl;
     std::cout << roboForm << std::endl;
     std::cout << pardonForm << std::endl;
 
-    std::cout << BLUE "\n--- Signing Forms ---\n" RESET << std::endl;
+    std::cout << BLUE "\n--- Signing Forms ---" RESET << std::endl;
 
     bob.signForm(shrubForm);
     bob.signForm(roboForm);
@@ -33,13 +31,12 @@ int main() {
     std::cout << roboForm << std::endl;
     std::cout << pardonForm << std::endl;
 
-    std::cout << BLUE "\n--- Executing Forms ---\n" RESET << std::endl;
+    std::cout << BLUE "\n--- Executing Forms ---" RESET << std::endl;
+    bob.executeForm(shrubForm);
+    bob.executeForm(roboForm);
+    bob.executeForm(pardonForm);
 
-    shrubForm.execute(bob);
-    roboForm.execute(bob);
-    pardonForm.execute(bob);
-
-    std::cout << YELLOW "\n--- fin ---\n" RESET << std::endl;
+    std::cout << YELLOW "\n--- fin ---" RESET << std::endl;
   } catch (const std::exception &e) {
     std::cerr << e.what() << std::endl;
   }

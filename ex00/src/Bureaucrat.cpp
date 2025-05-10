@@ -1,7 +1,6 @@
 #include "Bureaucrat.hpp"
 
 #include <iostream>
-#include <stdexcept>
 #include <string>
 
 #include "color.hpp"

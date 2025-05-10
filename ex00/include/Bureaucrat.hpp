@@ -5,7 +5,7 @@
 class Bureaucrat {
  private:
   const std::string _name;
-  int _grade;
+  int _grade;  // 1 is the highest grade, 150 is the lowest
 
  public:
   // === OCF ===

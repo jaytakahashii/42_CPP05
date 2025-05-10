@@ -12,24 +12,22 @@
 // === OCF ===
 
 Intern::Intern() {
-  std::cout << CYAN << "Intern default constructor called" << RESET
-            << std::endl;
+  std::cout << "Intern default constructor called" << std::endl;
 }
 
 Intern::Intern(const Intern &other) {
-  std::cout << CYAN << "Intern copy constructor called" << RESET << std::endl;
+  std::cout << "Intern copy constructor called" << std::endl;
   *this = other;
 }
 
 Intern &Intern::operator=(const Intern &other) {
-  std::cout << CYAN << "Intern copy assignment operator called" << RESET
-            << std::endl;
+  std::cout << "Intern copy assignment operator called" << std::endl;
   (void)other;
   return *this;
 }
 
 Intern::~Intern() {
-  std::cout << CYAN << "Intern destructor called" << RESET << std::endl;
+  std::cout << "Intern destructor called" << std::endl;
 }
 
 // === Form creation ===
@@ -61,16 +59,15 @@ AForm *Intern::makeForm(const std::string &formName,
 
   for (size_t i = 0; i < sizeof(formPairs) / sizeof(FormPair); ++i) {
     if (formName == formPairs[i].name) {
-      std::cout << GREEN << "Intern creates " << formName << RESET << std::endl;
+      std::cout << "Intern creates " << formName << std::endl;
       return formPairs[i].make(target);
     }
   }
-
   throw FormNotFoundException();
 }
 
 // === Exceptions ===
 
 const char *Intern::FormNotFoundException::what() const throw() {
-  return "Intern: Form not found";
+  return RED "Intern: Form not found" RESET;
 }

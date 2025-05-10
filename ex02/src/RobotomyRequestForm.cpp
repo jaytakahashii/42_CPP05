@@ -16,14 +16,9 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 // === Execute ===
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-  if (!this->isSigned()) {
-    throw NotSignedException();
-  }
-  if (executor.getGrade() > this->getExecuteGrade()) {
-    throw GradeTooLowException();
-  }
+  AForm::execute(executor);
   std::cout << "Drilling noises..." << std::endl;
-  if (rand() % 2 == 0) {
+  if ((std::rand() & 1) == 0) {
     std::cout << _target << " has been robotomized successfully." << std::endl;
   } else {
     std::cout << "Robotomy failed for " << _target << "." << std::endl;

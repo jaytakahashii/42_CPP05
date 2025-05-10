@@ -16,22 +16,25 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 // === Execute ===
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
-  if (!this->isSigned()) {
-    throw NotSignedException();
-  }
-  if (executor.getGrade() > this->getExecuteGrade()) {
-    throw GradeTooLowException();
-  }
+  AForm::execute(executor);
   std::ofstream file((_target + "_shrubbery").c_str());
   if (!file) {
     throw FileOpenException();
   }
-  file << "       _-_\n"
-          "    /~~   ~~\\\n"
-          " /~~         ~~\\\n"
-          "{               }\n"
-          " \\             /\n"
-          "   \\_________/\n";
+  file << "\n"
+          "         ^\n"
+          "        ^^^\n"
+          "       ^^^^^\n"
+          "      ^^^^^^^\n"
+          "     ^^^^^^^^^\n"
+          "    ^^^^^^^^^^^\n"
+          "   ^^^^^^^^^^^^^\n"
+          "  ^^^^^^^^^^^^^^^\n"
+          "        |||\n"
+          "        |||\n"
+          "        |||"
+       << std::endl;
+
   file.close();
   std::cout << "Shrubbery created in " << _target << "_shrubbery" << std::endl;
 }
