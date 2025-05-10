@@ -1,26 +1,51 @@
 #include <iostream>
 
-#include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main() {
   try {
-    Bureaucrat b1("Alice", 50);
-    AForm f1("tokyo", 45, 30);
+    Bureaucrat bob("Bob", 1);
+    Bureaucrat jim("Jim", 140);
+    Bureaucrat alice("Alice", 50);
 
-    std::cout << b1 << std::endl;
-    std::cout << f1 << std::endl;
+    ShrubberyCreationForm shrubForm("garden");
+    RobotomyRequestForm roboForm("Bender");
+    PresidentialPardonForm pardonForm("Ford Prefect");
 
-    b1.signForm(f1);  // 署名失敗（grade不足）
-    for (int i = 0; i < 10; ++i)
-      b1.incrementGrade();
+    std::cout << "\n--- Signing Forms ---\n" << std::endl;
 
-    std::cout << b1 << std::endl;
-    b1.signForm(f1);  // 署名成功
-    std::cout << f1 << std::endl;
+    bob.signForm(shrubForm);
+    bob.signForm(roboForm);
+    bob.signForm(pardonForm);
 
-  } catch (std::exception& e) {
-    std::cerr << e.what() << std::endl;
+    std::cout << "\n--- Executing Forms with Insufficient Grade ---\n"
+              << std::endl;
+
+    shrubForm.execute(jim);
+    roboForm.execute(jim);
+    pardonForm.execute(jim);
+
+    std::cout << "\n--- Executing Forms with Sufficient Grade ---\n"
+              << std::endl;
+
+    shrubForm.execute(bob);
+    roboForm.execute(bob);
+    pardonForm.execute(bob);
+
+    std::cout << "\n--- Executing Forms with Intermediate Grade ---\n"
+              << std::endl;
+
+    shrubForm.execute(alice);
+    roboForm.execute(alice);
+    pardonForm.execute(alice);
+
+    std::cout << "\n--- Attempting to Sign Forms with Insufficient Grade ---\n"
+              << std::endl;
+  } catch (const std::exception &e) {
+    std::cerr << "Exception: " << e.what() << std::endl;
   }
 
   return 0;

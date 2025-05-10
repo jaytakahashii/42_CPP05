@@ -34,6 +34,7 @@ class AForm {
   // === Operators ===
 
   void beSigned(const Bureaucrat &bureaucrat);
+  virtual void execute(const Bureaucrat &executor) const = 0;
 
   // === Exceptions ===
 
@@ -43,6 +44,11 @@ class AForm {
   };
 
   class GradeTooLowException : public std::exception {
+   public:
+    const char *what() const throw();
+  };
+
+  class NotSignedException : public std::exception {
    public:
     const char *what() const throw();
   };
